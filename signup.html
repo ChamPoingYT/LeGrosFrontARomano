@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-container">
+        <h2>Inscription</h2>
+        <form id="signupForm">
+            <label for="newUsername">Nom d'utilisateur</label>
+            <input type="text" id="newUsername" name="newUsername" required>
+            
+            <label for="newPassword">Mot de passe</label>
+            <input type="password" id="newPassword" name="newPassword" required>
+            
+            <button type="submit">S'inscrire</button>
+        </form>
+        <p id="signup-error-message" class="error"></p>
+        <p>Déjà un compte ? <a href="index.html">Connectez-vous ici</a></p>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
