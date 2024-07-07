@@ -20,23 +20,22 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     }
 });
 
-// Gestion de la soumission du formulaire d'inscription
-document.getElementById('signupForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    
-    var newUsername = document.getElementById('newUsername').value;
-    var newPassword = document.getElementById('newPassword').value;
+// Gestion du bouton S'enregistrer
+document.getElementById('registerButton').addEventListener('click', function() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
     
     // Vérifier si le nom d'utilisateur est déjà pris
-    let userExists = users.find(user => user.username === newUsername);
+    let userExists = users.find(user => user.username === username);
     
     if (userExists) {
-        document.getElementById('signup-error-message').innerText = 'Nom d\'utilisateur déjà pris';
+        document.getElementById('error-message').innerText = 'Nom d\'utilisateur déjà pris';
     } else {
         // Ajouter le nouvel utilisateur à la liste des utilisateurs
-        users.push({ username: newUsername, password: newPassword });
+        users.push({ username: username, password: password });
         alert('Inscription réussie');
         window.location.href = 'index.html'; // Rediriger vers la page de connexion après inscription
     }
 });
+
 
