@@ -27,11 +27,13 @@ document.getElementById('signupForm').addEventListener('submit', function(event)
     var newUsername = document.getElementById('newUsername').value;
     var newPassword = document.getElementById('newPassword').value;
     
+    // Vérifier si le nom d'utilisateur est déjà pris
     let userExists = users.find(user => user.username === newUsername);
     
     if (userExists) {
         document.getElementById('signup-error-message').innerText = 'Nom d\'utilisateur déjà pris';
     } else {
+        // Ajouter le nouvel utilisateur à la liste des utilisateurs
         users.push({ username: newUsername, password: newPassword });
         alert('Inscription réussie');
         window.location.href = 'index.html'; // Rediriger vers la page de connexion après inscription
